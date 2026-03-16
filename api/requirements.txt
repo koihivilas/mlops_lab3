@@ -1,0 +1,8 @@
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+requests>=2.31.0
+pandas>=2.0.0
+evidently==0.4.40
+prometheus-client>=0.17.1
+nltk>=3.8.1

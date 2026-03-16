@@ -1,0 +1,16 @@
+services:
+  api:
+    build: 
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: ticket-classifier-api
+    ports:
+      - "5000:5000"
+    environment:
+      # These variables must be provided in a .env file or passed in the shell
+      - DATABRICKS_HOST=${DATABRICKS_HOST}
+      - DATABRICKS_TOKEN=${DATABRICKS_TOKEN}
+      - DATABRICKS_ENDPOINT_NAME=${DATABRICKS_ENDPOINT_NAME:-ticket-classifier-endpoint}
+    volumes:
+      - ./api:/app
+    restart: unless-stopped
